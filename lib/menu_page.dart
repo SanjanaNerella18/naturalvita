@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:naturalvita/set_vacation_page.dart';
+
 
 void main() => runApp(MyApp());
 
@@ -113,15 +115,16 @@ class MyPlanPage extends StatelessWidget {
   }
 }
 
-class SetVacationPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Set Vacation')),
-      body: Center(child: Text('Details of Set Vacation')),
-    );
-  }
-}
+// class SetVacationPage extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(title: Text('Set Vacation')),
+//       body: Center(child: Text('Details of Set Vacation')),
+//     );
+//   }
+// }
+
 
 class MyOrdersPage extends StatelessWidget {
   @override

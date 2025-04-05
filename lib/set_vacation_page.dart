@@ -42,7 +42,10 @@ class _SetVacationPageState extends State<SetVacationPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Set Vacation')),
+      appBar: AppBar(
+        title: Text('Set Vacation'),
+        backgroundColor: Colors.blue[800]!,  // Dark blue AppBar
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -50,21 +53,27 @@ class _SetVacationPageState extends State<SetVacationPage> {
           children: [
             Text(
               'Select Your Vacation Dates:',
-              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Colors.blue),
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.blue[800]!, // Blue color for the heading
+              ),
             ),
             SizedBox(height: 20),
 
             // Start Date
-            Text('Start Date:', style: TextStyle(fontSize: 16)),
+            Text('Start Date:', style: TextStyle(fontSize: 18, color: Colors.black)),
             GestureDetector(
               onTap: () => _selectDate(context, true),
               child: AbsorbPointer(
                 child: TextFormField(
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200]!,  // Light grey background for text fields
                     labelText: _startDate == null ? 'Select Start Date' : _formatDate(_startDate!),
-                    labelStyle: TextStyle(color: Colors.blue),
+                    labelStyle: TextStyle(color: Colors.black),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: BorderSide(color: Colors.blue[800]!, width: 2),
                     ),
                     border: OutlineInputBorder(),
                   ),
@@ -74,16 +83,18 @@ class _SetVacationPageState extends State<SetVacationPage> {
             SizedBox(height: 20),
 
             // End Date
-            Text('End Date:', style: TextStyle(fontSize: 16)),
+            Text('End Date:', style: TextStyle(fontSize: 18, color: Colors.black)),
             GestureDetector(
               onTap: () => _selectDate(context, false),
               child: AbsorbPointer(
                 child: TextFormField(
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.grey[200]!,  // Light grey background for text fields
                     labelText: _endDate == null ? 'Select End Date' : _formatDate(_endDate!),
-                    labelStyle: TextStyle(color: Colors.blue),
+                    labelStyle: TextStyle(color: Colors.black),
                     focusedBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.blue),
+                      borderSide: BorderSide(color: Colors.blue[800]!, width: 2),
                     ),
                     border: OutlineInputBorder(),
                   ),
@@ -107,10 +118,11 @@ class _SetVacationPageState extends State<SetVacationPage> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue, // Button color
+                  backgroundColor: Colors.blue[700]!, // Blue button color
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 15),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)), // Rounded corners
                 ),
-                child: Text('Set Vacation', style: TextStyle(fontSize: 18)),
+                child: Text('Set Vacation', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.black)),
               ),
             ),
           ],
